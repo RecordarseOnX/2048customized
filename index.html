@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>请选择2048版本</title>
+  <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+
+  <div class="game-selection">
+    <h1>请选择2048版本</h1>
+    <div class="button-container">
+      <!-- 经典款直接跳转到 classic.html -->
+      <button onclick="chooseGame('classic')" class="game-button classic">经典款</button>
+      <!-- 其他游戏版本通过参数传递跳转到 game.html -->
+      <button onclick="chooseGame('suisui')" class="game-button others">岁岁款</button>
+      <button onclick="chooseGame('study')" class="game-button others">学习款</button>
+      <button onclick="chooseGame('nana')" class="game-button others">娜娜款</button>
+      <button onclick="chooseGame('bestie')" class="game-button others">BESTIE款</button>
+      <button onclick="chooseGame('yongyexinghe')" class="game-button others">永夜星河款</button>
+      <button onclick="chooseGame('lisi')" class="game-button">敬请期待</button>
+    </div>
+  </div>
+  
+  <script>
+    // 选择游戏版本并跳转到相应页面
+    function chooseGame(version) {
+      if (version === 'classic') {
+        // 经典款直接跳转到 classic.html
+        window.location.href = 'classic.html';
+      } else {
+        // 其他版本跳转到 game.html，并传递版本信息
+        window.location.href = `game.html?version=${version}`;
+      }
+    }
+  </script>
+
+</body>
+</html>

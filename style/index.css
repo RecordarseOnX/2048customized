@@ -1,0 +1,73 @@
+/* 页面背景和字体设置 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+  }
+  
+  .game-selection {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .game-button {
+    font-size: 18px;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    background-color: #3498db;
+  }
+  
+  .game-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .game-button:active {
+    background-color: #1d6f94;
+  }
+  
+  .game-button.classic {
+    background-color: #8f7a66;
+  }
+  
+  .game-button.classic:hover {
+    background-color: #bbada0;
+  }
+  
+  .game-button.others {
+    background-color: #f39c12;
+  }
+  
+  .game-button.others:hover {
+    background-color: #e67e22;
+  }
+  

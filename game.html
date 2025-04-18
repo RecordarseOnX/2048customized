@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048</title>
+
+  <link href="style/main.css?v=1.0.4" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <!-- 将2048标题改成可点击的菜单按钮 -->
+      <h1 class="title" id="menuButton">2048</h1> <!-- 添加id用于绑定事件 -->
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+  <!-- 一级菜单 -->
+  <div id="menu" class="menu hidden">
+    <a href="index.html">版本选择</a>
+    <a href="#" id="soundSettings">声音设置</a>
+  </div>
+
+  <!-- 二级菜单 -->
+  <div id="soundMenu" class="menu hidden">
+    <a href="#" id="closeMenu">关闭菜单</a> <!-- 修改 id 和文本 -->
+    <label class="switch">
+      游戏音效
+      <input type="checkbox" id="gameSoundToggle">
+      <span class="slider"></span>
+    </label>
+    <label class="switch">
+      背景音乐
+      <input type="checkbox" id="bgMusicToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+    <div class="above-game">
+      <p class="game-intro">Tap <strong>2048</strong> into menu
+                          <br>It can control music</p>
+      <!-- 新增按钮容器 -->
+      <div class="button-container">
+        <a class="restart-button">New Game</a>
+        <a class="restart-button" id="undoButton">Undo</a>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+  
+    <p class="game-explanation">
+    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+    <hr>
+    <P>改自 2048verse.com 开源项目</P> 
+    </p>
+  </div>
+
+  <script>
+    // 获取 URL 查询参数中的 'version'
+    const urlParams = new URLSearchParams(window.location.search);
+    window.gameVersion = urlParams.get('version'); // 获取 'version' 参数
+  </script>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <!-- <script src="js/html_actuator.js?v=1.0.4"></script> -->
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/sound_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  <script src="js/menu.js"></script>
+
+
+  
+</body>
+</html>
